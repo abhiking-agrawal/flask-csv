@@ -4,8 +4,11 @@ from bson.json_util import dumps
 from bson.objectid import ObjectId
 import io
 import csv
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 app.config["MONGO_URI"] = "mongodb+srv://admin:admin@cluster0-znwk6.mongodb.net/demo?retryWrites=true"
 mongo = PyMongo(app)
 
